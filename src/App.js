@@ -1,26 +1,18 @@
-import logo from './logo.svg';
-import './App.less';
-import { Button } from 'antd'
+import "./App.less";
+import { Layout } from "antd";
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button type="primary">Primary Button</Button>
-      </header>
-    </div>
+    <Layout>
+      <Header>header</Header>
+      <Layout>
+        <Sider>left sidebar</Sider>
+        <Content>main content</Content>
+        <Sider>right sidebar</Sider>
+      </Layout>
+      <Footer>footer</Footer>
+    </Layout>
   );
 }
 
