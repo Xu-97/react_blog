@@ -14,9 +14,9 @@ const routers = [
       children:[
         {
           label: '首页',
-          index: true,
+          index: 'true',
           element: lazyLoad(<Home />),
-          key: 'home'
+          key: 'home',
         },
         {
           label: '用户',
