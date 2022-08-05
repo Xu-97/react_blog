@@ -1,8 +1,11 @@
 import { lazy, Suspense } from "react"  // 引入懒加载
 import { Spin } from "antd"
 import AppLayout  from "../pages/app-layout"
-const Home = lazy( () => import('../pages/home'))
-const User = lazy( () => import('../pages/user') )
+const Home = lazy(() => import('../pages/home'))
+const User = lazy(() => import('../pages/user'))
+const My = lazy(() => import('../pages/my'))
+const Share = lazy(()=> import('../pages/share'))
+const NotFound = lazy(() => import('../pages/not-found'))
 const lazyLoad = (children) => {
   return <Suspense fallback = {<Spin />}>{children}</Suspense>
 }
@@ -23,10 +26,31 @@ const routers = [
           path: "/user",
           element: lazyLoad(<User />),
           key: 'user'
+        },
+        {
+          label: '更多',
+          key: 'SubMenu',
+          children:[
+            {
+              label: '我的',
+              key: 'my',
+              path:'/my',
+              element: lazyLoad(<My />)
+            },
+            {
+              label: '资源分享',
+              key: 'share',
+              path:'/share',
+              element: lazyLoad(<Share />)
+            },
+          ]
         }
       ]
     },
-
+    {
+      path:"*",
+      element: lazyLoad(<NotFound />)
+    }
   ]
 
 export default routers

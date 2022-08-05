@@ -4,8 +4,9 @@ import routers from '../../router'
 import { useNavigate } from "react-router-dom"
 
 export default function AppMenu() {
-  const navigate = useNavigate();
-  const [current, setCurrent] = useState('home');
+  console.log(routers)
+  const navigate = useNavigate()
+  const [current, setCurrent] = useState('home')
   const handleClick = (e) => {
     const {key} = e
     key === 'home' ?  navigate('/') : navigate(key)
