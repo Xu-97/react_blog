@@ -7,7 +7,6 @@ const instance = axios.create({
 
 // 请求拦截器, 请求之前需要做什么
 instance.interceptors.request.use(config => {
-  console.log(config);
   return config
 })
 
