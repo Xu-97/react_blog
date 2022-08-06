@@ -18,7 +18,7 @@ const AppLayout = () => (
         textAlign: 'center',
       }}
     >
-      Ant Design ©2018 Created by Ant UED
+    皖ICP备2021012350号-1
     </Footer>
   </Layout>
 );

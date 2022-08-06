@@ -1,10 +1,13 @@
 import { Menu } from 'antd'
-import React,{ useState } from 'react'
+import React,{ useState, useEffect } from 'react'
 import routers from '../../router'
 import { useNavigate } from "react-router-dom"
 
 export default function AppMenu() {
   const navigate = useNavigate()
+  useEffect (() => {
+    console.log(current);
+  })
   const [current, setCurrent] = useState('home')
   const handleClick = (e) => {
     const {key} = e

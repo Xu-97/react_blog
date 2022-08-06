@@ -6,6 +6,7 @@ const User = lazy(() => import('../pages/user'))
 const My = lazy(() => import('../pages/my'))
 const Share = lazy(()=> import('../pages/share'))
 const NotFound = lazy(() => import('../pages/not-found'))
+const Message = lazy(() => import('../pages/message'))
 const lazyLoad = (children) => {
   return <Suspense fallback = {<Spin />}>{children}</Suspense>
 }
@@ -26,6 +27,12 @@ const routers = [
           path: "/user",
           element: lazyLoad(<User />),
           key: 'user'
+        },
+        {
+          label: '留言',
+          path: "/message",
+          element: lazyLoad(<Message />),
+          key: 'message'
         },
         {
           label: '更多',
