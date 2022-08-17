@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Styles from "./CommentItem.module.css";
 
 function CommentItem(props) {
+  console.log(props)
   let numberOfNested = 0;
   const [showReplyForm, setShowReplyForm] = useState(false);
   const [replyFormValue, setReplyFormValue] = useState("");

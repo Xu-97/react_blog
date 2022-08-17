@@ -5,7 +5,6 @@ import CommentItem from "../CommentItem/CommentItem";
 import AddComment from "../AddComment/AddComment";
 
 function Comments(props) {
-  console.log(props)
   let arr = [
     { id: 1, name: "Jenry Hess" },
     { id: 2, name: "Elliot Hu" },
