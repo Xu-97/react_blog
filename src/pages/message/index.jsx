@@ -8,21 +8,22 @@ import './index.less'
 export default function Message() {
   const [message, setMessage]= useState([])
   const [params, setParams] = useState({pageNum:1,pageSize:10})
-  useEffect (() => {
+  useEffect (() => { 
+    const _getMessage = async() => {
+      const result = await getMessage(params)
+      if (result.code === 200) {
+        console.log(result);
+        setMessage(result.data)
+      }
+    }
     _getMessage()
-  },[])
+  },[params])
   // 翻页
   function handlePageChange (pageNum, pageSize) {
     setParams({pageNum,pageSize})
-    _getMessage()
+    // _getMessage()
   } 
-  async function _getMessage() {
-    const result = await getMessage(params)
-    if (result.code === 200) {
-      console.log(result);
-      setMessage(result.data)
-    }
-  }
+
   return (
     <div>
       <Comments  message = {message}/>
