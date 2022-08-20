@@ -1,4 +1,4 @@
-import { Layout } from 'antd'
+import { Layout, Col, Row, } from 'antd'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import "./index.less"
@@ -11,7 +11,11 @@ const AppLayout = () => (
       <AppMenu/>
     </Header>
     <Content className="main-content">
-      <Outlet/>
+      <Row justify='center'>
+          <Col span={20}>
+            <Outlet/>
+          </Col>
+      </Row>
     </Content>
     <Footer
       style={{

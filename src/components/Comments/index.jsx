@@ -1,6 +1,5 @@
 import React from 'react'
 import CommentItem from '../CommentItem'
-import AddComment from '../AddComment'
 
 export default function Comments(props) {
   const { message } = props
@@ -16,7 +15,6 @@ export default function Comments(props) {
           )
         })
       }
-      <AddComment />
     </div>
   )
 }
