@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react'
-// import { Comment, List,  } from 'antd'
-// import moment from 'moment'Tooltip
-import Comments from '../../components/Comments/Comments' //评论组件
-import MessageItem from '../../components/MessageItem'
+import Comments from '../../components/Comments'
 import { getMessage } from '../../api/message'
 import './index.less'
 
@@ -19,20 +16,7 @@ export default function Message() {
   }
   return (
     <div>
-      <div style={{display:'none'}}>
-      <Comments message={message}></Comments>
-      </div>
-      <br/>
-      {
-        message.map((item, index) => {
-          return (
-          <MessageItem
-            item = {item}
-            key = {index}
-          />
-          )
-        })
-      }
+      <Comments  message = {message}/>
     </div>
   )
 }
