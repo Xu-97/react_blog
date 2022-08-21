@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AddComment from '../AddComment';
 
 export default function MessageItem(props) {
   const {item} = props
@@ -25,7 +26,10 @@ export default function MessageItem(props) {
         !showReplyForm ? (<div className='reply' onClick={ hanleReplyForm }>回复</div>)
         :
         (<div className='reply-form'>
-
+          <AddComment 
+            handleRelpy = {(visible) => {setShowReplyForm(visible)}} 
+            parentId= {item.id}
+            />         
         </div>)
       }
     </div>

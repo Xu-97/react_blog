@@ -1,23 +1,30 @@
 import React from 'react'
 import { Col, Row, Form, Input, Button} from 'antd'
+import {addMessage} from '../../api/message'
 import './index.css'
 
-export default function AddComment() {
+export default function AddComment(props) {
+  const { firstComment, handleRelpy, parentId } = props
   const [form] = Form.useForm()
 
-  // const label = () =>{
-  //   return (
-  //     <div>
-  //       <img src="http://q.qlogo.cn/headimg_dl?dst_uin=2603029264@qq.com&spec=100" alt="" />
-  //     </div>
-  //   )
-  // }
-  const onFinish = (values) => {
-    console.log('Success:', values)
+  const onFinish = async (values) => {
+    let data = values
+    if(parentId) {
+      data = Object.assign(values,{parentId})
+    }else {
+      data = Object.assign(values,{parentId:0})
+    }
+    console.log(data);
+    const result = await addMessage(data)
+    console.log(result);
   }
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
+  }
+
+  const handleCancel = () => {
+    handleRelpy(false)
   }
   return (
     <Form
@@ -36,11 +43,11 @@ export default function AddComment() {
               rules={[
                 {
                   required: true,
-                  message: '请输入',
+                  message: '请输入留言',
                 },
               ]}
             >
-              <Input.TextArea showCount maxLength={100} />
+              <Input.TextArea showCount maxLength={100} autoSize={{ minRows: 4}} placeholder ="您的留言" />
             </Form.Item>
           </Col>
       </Row>
@@ -56,7 +63,7 @@ export default function AddComment() {
             },
             ]}
           >
-            <Input />
+            <Input placeholder='您的昵称' />
           </Form.Item>
         </Col>
         <Col span={8}>
@@ -70,7 +77,7 @@ export default function AddComment() {
               },
             ]}
         >
-            <Input />
+            <Input placeholder='您的邮件地址' />
         </Form.Item>
         </Col>
         <Col span={8}>
@@ -78,16 +85,19 @@ export default function AddComment() {
           label="网址"
           name="webUrl"
         >
-          <Input />
+          <Input placeholder='你的网址' />
         </Form.Item>
         </Col>
       </Row>
-      <Row justify='center'>
+      <Row>
         <Col span={6}>
           <Form.Item>
             <Button type="primary" htmlType="submit" className='add-comment-button'>
-              Submit
+              提交
             </Button>
+            {
+              !firstComment ? <Button type="link" onClick={handleCancel}>取消</Button> : <></>
+            }
           </Form.Item>
         </Col>
       </Row>

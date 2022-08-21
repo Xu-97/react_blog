@@ -7,13 +7,14 @@ import './index.less'
 
 export default function Message() {
   const [message, setMessage]= useState([])
+  const [total, setTotal] = useState(0)
   const [params, setParams] = useState({pageNum:1,pageSize:10})
   useEffect (() => { 
     const _getMessage = async() => {
       const result = await getMessage(params)
       if (result.code === 200) {
-        console.log(result);
         setMessage(result.data)
+        setTotal(result.total)
       }
     }
     _getMessage()
@@ -21,14 +22,18 @@ export default function Message() {
   // 翻页
   function handlePageChange (pageNum, pageSize) {
     setParams({pageNum,pageSize})
-    // _getMessage()
   } 
 
   return (
     <div>
-      <Comments  message = {message}/>
-      <Pagination defaultCurrent={1} total={50} onChange = {handlePageChange} />
-      <AddComment />
+      <Comments  message={message}/>
+      <Pagination 
+        current={params.pageNum} 
+        total={total} 
+        onChange={handlePageChange} 
+        showTotal={(total) => `总共 ${total}条`}
+      />
+      <AddComment firstComment={true}/>
     </div>
   )
 }
