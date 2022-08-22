@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AddComment from '../AddComment';
 
 export default function MessageItem(props) {
-  const {item} = props
+  const {item, handleFefresh} = props
   const [showReplyForm, setShowReplyForm] = useState(false);
   // 点击回复做处理
   const hanleReplyForm = () => {
@@ -29,6 +29,7 @@ export default function MessageItem(props) {
           <AddComment 
             handleRelpy = {(visible) => {setShowReplyForm(visible)}} 
             parentId= {item.id}
+            handleFefresh = {handleFefresh}
             />         
         </div>)
       }

@@ -4,7 +4,7 @@ import {addMessage} from '../../api/message'
 import './index.css'
 
 export default function AddComment(props) {
-  const { firstComment, handleRelpy, parentId } = props
+  const { firstComment, handleRelpy, parentId, handleFefresh } = props
   const [form] = Form.useForm()
 
   const onFinish = async (values) => {
@@ -16,7 +16,11 @@ export default function AddComment(props) {
     }
     console.log(data);
     const result = await addMessage(data)
-    console.log(result);
+    if (result.code === 200) {
+      handleFefresh(true)
+      handleRelpy(false)
+      form.resetFields()
+    }
   }
 
   const onFinishFailed = (errorInfo) => {
@@ -25,6 +29,7 @@ export default function AddComment(props) {
 
   const handleCancel = () => {
     handleRelpy(false)
+    form.resetFields()
   }
   return (
     <Form
