@@ -2,7 +2,7 @@ import React from 'react'
 import CommentItem from '../CommentItem'
 
 export default function Comments(props) {
-  const { message, handleFefresh } = props
+  const { message } = props
   return (
     <div>
       {
@@ -11,7 +11,6 @@ export default function Comments(props) {
               <CommentItem
               item = {item}
               key = {index}
-              handleFefresh= {handleFefresh}
               />
           )
         })
