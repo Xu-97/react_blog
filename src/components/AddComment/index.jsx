@@ -1,14 +1,13 @@
 import React from 'react'
 import { Col, Row, Form, Input, Button} from 'antd'
+import { useDispatch } from 'react-redux/es/exports'
+import { handleListenr } from '../../store/modules/comment'
 import {addMessage} from '../../api/message'
 import './index.css'
-import { useDispatch } from 'react-redux/es/exports'
-import { handleRefresh } from '../../store/modules/refresh'
 
 export default function AddComment(props) {
-  const { firstComment, handleRelpy, parentId, handleFefresh } = props
+  const { firstComment, handleRelpy, parentId } = props
   const dispatch = useDispatch()
-  // const { refresh } = useSelector(state => state.refresh)
   const [form] = Form.useForm()
   const onFinish = async (values) => {
     let data = values
@@ -20,10 +19,13 @@ export default function AddComment(props) {
     console.log(data);
     const result = await addMessage(data)
     if (result.code === 200) {
-      handleFefresh(true)
-      handleRelpy(false)
       form.resetFields()
-      dispatch(handleRefresh())
+      dispatch(handleListenr())
+      if(firstComment) {
+        return
+      }else{
+        handleRelpy(false)
+      }
     }
   }
 

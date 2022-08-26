@@ -2,12 +2,12 @@
  * 创建store
  */
  import counter from "./modules/counter"
- import refresh from "./modules/refresh"
+ import comment from "./modules/comment"
  const { configureStore } = require("@reduxjs/toolkit")
 
 export default configureStore({
   reducer: {
     counter,
-    refresh
+    comment
   }
 })
