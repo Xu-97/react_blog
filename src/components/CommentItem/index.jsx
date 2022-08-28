@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
+import { Avatar} from 'antd';
 import AddComment from '../AddComment';
+import {parseTime} from '../../utils/help'
+import './index.less'
 
 export default function MessageItem(props) {
   const {item} = props
@@ -19,11 +22,23 @@ export default function MessageItem(props) {
   })
   return (
     <div>
-    <div className='message-item' style={{border:'1px solid #cf0000'}}>
-      <div>id:{item.id}</div>
-      <div>message:{item.message}</div>
+    <div className='message-item'>
+      <div className='profile'>
+      <Avatar
+        shape="circle" size={64}
+        src={item.qq}
+        />
+        <div className='username'>
+          {item.nickname}
+        </div>
+      </div>
+      <div className='comment-detail'>
+        <span className='timer'>{parseTime(item.create_time)}</span>
+        <div className='comment-content' dangerouslySetInnerHTML={{__html: item.message}}>
+        </div>
+      </div>
       {
-        !showReplyForm ? (<div className='reply' onClick={ hanleReplyForm }>回复</div>)
+        !showReplyForm ? (<p className='reply' onClick={ hanleReplyForm }>回复</p >)
         :
         (<div className='reply-form'>
           <AddComment 
@@ -33,7 +48,7 @@ export default function MessageItem(props) {
         </div>)
       }
     </div>
-    <div style={{ marginLeft: '10px' }}>{recursiveMessage}</div>
+    <div style={{ marginLeft: '50px' }}>{recursiveMessage}</div>
     </div>
   )
 }

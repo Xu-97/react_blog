@@ -3,13 +3,13 @@ import { Col, Row, Form, Input, Button} from 'antd'
 import { useDispatch } from 'react-redux/es/exports'
 import { handleListenr } from '../../store/modules/comment'
 import {addMessage} from '../../api/message'
-import './index.css'
 
 export default function AddComment(props) {
   const { firstComment, handleRelpy, parentId } = props
   const dispatch = useDispatch()
   const [form] = Form.useForm()
   const onFinish = async (values) => {
+    values.message =  values.message.replace(/\n/g,'<br/>')
     let data = values
     if(parentId) {
       data = Object.assign(values,{parentId})
@@ -34,8 +34,8 @@ export default function AddComment(props) {
   }
 
   const handleCancel = () => {
-    handleRelpy(false)
     form.resetFields()
+    handleRelpy(false)
   }
   return (
     <Form
@@ -110,6 +110,7 @@ export default function AddComment(props) {
               !firstComment ? <Button type="link" onClick={handleCancel}>取消</Button> : <></>
             }
           </Form.Item>
+          <span className='tips' style={ {fontSize: '12px',color: '#657786'}}>tips:建议填写QQ邮箱</span>
         </Col>
       </Row>
     </Form>
