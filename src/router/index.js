@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react"  // 引入懒加载
 import { Spin } from "antd"
-import AppLayout  from "../pages/app-layout"
+import AppLayout  from "../pages/appLayout"
 const Home = lazy(() => import('../pages/home'))
 const User = lazy(() => import('../pages/user'))
 const My = lazy(() => import('../pages/my'))

@@ -2,7 +2,7 @@ import { Layout, Col, Row, } from 'antd'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import "./index.less"
-import AppMenu from '../app-menu'
+import AppMenu from '../appMenu'
 const { Header, Content, Footer } = Layout
 const AppLayout = () => (
   <Layout className="layout">

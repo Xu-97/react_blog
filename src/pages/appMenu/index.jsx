@@ -23,7 +23,7 @@ export default function AppMenu() {
   return (
     <>
     <Menu
-    theme="dark"
+    theme="lignt"
     mode="horizontal"
     selectedKeys={[current]}
     items={routers[0].children}
