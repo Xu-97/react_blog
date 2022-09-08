@@ -5,3 +5,8 @@ export const getArticleData = (params) => request({
   method: 'GET',
   params
 }) 
+
+export const articleDetail = (id) => request({
+  url: `/article/query?id=${id}`,
+  method: 'GET',
+})
