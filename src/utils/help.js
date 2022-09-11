@@ -38,3 +38,16 @@ export const parseTime =  function(time, pattern) {
   })
   return time_str
 }
+
+// 随机生成16进制颜色
+export const getRandColor = () => {
+  const r = Math.floor(Math.random()*256);
+  const g = Math.floor(Math.random()*256);
+  const b = Math.floor(Math.random()*256);
+  const color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+  if(color === '#ffffff') {
+    getRandColor()
+  }
+  return color;
+
+}

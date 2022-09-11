@@ -12,9 +12,9 @@ const AppLayout = () => (
     </Header>
     <Content className="main-content">
       <Row justify='center'>
-          <Col span={20}>
+      <Col>
             <Outlet/>
-          </Col>
+      </Col>      
       </Row>
     </Content>
     <Footer
