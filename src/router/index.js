@@ -7,6 +7,7 @@ const My = lazy(() => import('../pages/my'))
 const Share = lazy(()=> import('../pages/share'))
 const NotFound = lazy(() => import('../pages/not-found'))
 const Message = lazy(() => import('../pages/message'))
+const Detail = lazy(() => import('../pages/detail'))
 const lazyLoad = (children) => {
   return <Suspense fallback = {<Spin />}>{children}</Suspense>
 }
@@ -21,6 +22,11 @@ const routers = [
           index: 'true',
           element: lazyLoad(<Home />),
           key: 'home',
+        },
+        {
+          path: "/detail",
+          element: lazyLoad(<Detail />),
+          key: 'detail'
         },
         {
           label: '用户',

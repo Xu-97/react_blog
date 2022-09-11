@@ -1,6 +1,6 @@
 import { Menu } from 'antd'
 import React,{ useState, useEffect} from 'react'
-import routers from '../../router'
+import {menu} from './menu'
 import { useNavigate, useLocation } from "react-router-dom"
 
 export default function AppMenu() {
@@ -26,7 +26,7 @@ export default function AppMenu() {
     theme="lignt"
     mode="horizontal"
     selectedKeys={[current]}
-    items={routers[0].children}
+    items={menu}
     onClick = { handleClick }
   />
   </>
