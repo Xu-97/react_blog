@@ -1,17 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { parseTime } from '../../utils/help'
 import HighLight from '../../components/HighLight'
 import { articleDetail } from '../../api/home'
+import "./index.css"
+
 export default function Detail() {
   const [params] = useSearchParams()
   const id = params.get('id')
-  const [detail, setDetail] = useState('')
+  const [detail, setDetail] = useState({})
 
   useEffect( () => {
     async function _articleDetail() {
       const result = await articleDetail(id)
       if(result.code === 200) {
-        setDetail((htmlUnEscape(result.data[0].content)))
+        setDetail((result.data[0]))
       }
     }
     _articleDetail()
@@ -35,7 +38,14 @@ export default function Detail() {
 
   return (
     <div className='editor-content-view'>
-      <HighLight code={detail} />
+      <div className='title'>
+        {detail.title}
+      </div>
+      <div className='info-desc'>
+        <span>标签： {detail.label_name}</span>
+        <span> 更新时间：{parseTime(detail.update_time)}</span>
+      </div>
+      <HighLight code={ htmlUnEscape(detail.content) } />
     </div>
   )
 }
