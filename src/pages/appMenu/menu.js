@@ -5,9 +5,9 @@ export const menu = [
     key: 'home',
   },
   {
-    label: '用户',
-    path: "/user",    
-    key: 'user'
+    label: '友链',
+    path: "/link",    
+    key: 'link'
   },
   {
     label: '留言',

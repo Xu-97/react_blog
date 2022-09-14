@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react"  // 引入懒加载
 import { Spin } from "antd"
 import AppLayout  from "../pages/appLayout"
 const Home = lazy(() => import('../pages/home'))
-const User = lazy(() => import('../pages/user'))
+const Link = lazy(() => import('../pages/link'))
 const My = lazy(() => import('../pages/my'))
 const Share = lazy(()=> import('../pages/share'))
 const NotFound = lazy(() => import('../pages/not-found'))
@@ -19,7 +19,7 @@ const routers = [
       children:[
         {
           label: '首页',
-          index: 'true',
+          index: true,
           element: lazyLoad(<Home />),
           key: 'home',
         },
@@ -29,10 +29,10 @@ const routers = [
           key: 'detail'
         },
         {
-          label: '用户',
-          path: "/user",
-          element: lazyLoad(<User />),
-          key: 'user'
+          label: '友链',
+          path: "/link",
+          element: lazyLoad(<Link />),
+          key: 'link'
         },
         {
           label: '留言',
