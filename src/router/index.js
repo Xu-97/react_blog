@@ -8,6 +8,7 @@ const Share = lazy(()=> import('../pages/share'))
 const NotFound = lazy(() => import('../pages/not-found'))
 const Message = lazy(() => import('../pages/message'))
 const Detail = lazy(() => import('../pages/detail'))
+const Weblog = lazy(() => import('../pages/weblog'))
 const lazyLoad = (children) => {
   return <Suspense fallback = {<Spin />}>{children}</Suspense>
 }
@@ -24,8 +25,14 @@ const routers = [
           key: 'home',
         },
         {
-          path: "/detail",
+          path: '/detail',
           element: lazyLoad(<Detail />),
+          key: 'detail'
+        },
+        {
+          label: '日志',
+          path: '/weblog',
+          element: lazyLoad(<Weblog/>),
           key: 'detail'
         },
         {

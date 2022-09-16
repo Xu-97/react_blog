@@ -19,7 +19,6 @@ const commentSlice = createSlice({
   },
   reducers:{
     handleListenr(state, action) {
-      console.log(state, action);
       state.lister = true
     }
   },

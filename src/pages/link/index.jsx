@@ -15,6 +15,10 @@ export default function User() {
       setFriends(data)
     }
   }
+  // 跳转外链
+  const handleClick = (url) => {
+    window.open(url)
+  } 
   return (
     <>
     <div className='mine'>
@@ -27,7 +31,11 @@ export default function User() {
     <div className='friends'>
       {
         friends.map(i => 
-        <div key={i.id} className="items">
+        <div 
+          key={i.id} 
+          className="items"
+          onClick={()=> { handleClick(i.web_link) }}
+          >
           <div className='avatar'>
             <img src={i.profile} alt="找不到图片了" />
           </div>

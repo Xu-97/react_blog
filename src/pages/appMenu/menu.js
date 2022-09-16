@@ -5,6 +5,11 @@ export const menu = [
     key: 'home',
   },
   {
+    label: '日志',
+    path: '/weblog',
+    key: 'weblog'
+  },
+  {
     label: '友链',
     path: "/link",    
     key: 'link'
