@@ -1,10 +1,11 @@
 import React,{useEffect, useState} from 'react'
-import { Card, Tag, Pagination} from 'antd'
-import { parseTime, getRandColor } from '../../utils/help'
-import { useNavigate } from "react-router-dom"
-import { getArticleData } from '../../api/home'
+import { Card, Tag, Pagination, Input } from 'antd'
+import { parseTime, getRandColor, debounde } from '../../utils/help'
+import { useNavigate} from "react-router-dom"
+import { getArticleData, getArticleByTitle } from '../../api/home'
 import "./index.css"
-const { Meta } = Card;
+const { Meta } = Card
+const { Search } = Input
 
 export default function Home() {
   const [articles, setArticles] = useState([])
@@ -15,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     _getArticleData()
   },[])
-
+  // 接口拿数据
   async function _getArticleData() {
     const result = await getArticleData({pageNum:1,pageSize:10})
     if (result.code === 200) {
@@ -24,17 +25,35 @@ export default function Home() {
       setTotal(total)
     }
   }
-
+  // 分页切换
   function handlePageChange (pageNum, pageSize) {
     setParams({pageNum,pageSize})
   } 
-
+  //点击进详情
   const handleClick = async(id) => {
     navigate(`/detail?id=${id}`, {replace: true,})
   }
 
+  // 点击搜索
+  const onSearch = async(value) => {
+    const result = await getArticleByTitle(value)
+    if (result.code === 200) {
+      const {data} = result
+      setArticles(data)
+      setTotal(data.length)
+    }
+  }
+
+  // 点击搜索添加防抖
+  const onSearchClick = (value) => {
+    debounde(onSearch(value), 2000, true)
+  } 
+
   return (
     <div className='home'>
+      <div className='search-bar'>
+        <Search allowClear style={{ width: 400 }} placeholder="请输入文章标题关键字" onSearch={onSearchClick} enterButton />
+      </div>
       <div className='article'>
       {
         articles.map(item => 

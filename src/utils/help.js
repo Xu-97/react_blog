@@ -49,5 +49,28 @@ export const getRandColor = () => {
     getRandColor()
   }
   return color;
+}
 
+// 防抖函数封装
+// 防抖函数
+export function debounde(fn, wait, immediate) {
+  let timeout
+  return function() {
+    const context = this
+    const args = arguments
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    const callNow = !timeout
+    if (immediate) {
+      timeout = setTimeout(function() {
+        timeout = null
+      }, wait)
+      if (callNow) fn.apply(context, args)
+    } else {
+      timeout = setTimeout(function() {
+        fn.apply(context, args)
+      }, wait)
+    }
+  }
 }

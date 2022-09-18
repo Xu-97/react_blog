@@ -1,0 +1,16 @@
+.web-log{
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.web-log .head-name{
+  font-size: 16px;
+  color: #425aef;
+  padding-left: 10px;
+}
+.web-log .create-time{
+  color: #ddd;
+  font-size: 12px;
+  padding-left: 10px;
+}
