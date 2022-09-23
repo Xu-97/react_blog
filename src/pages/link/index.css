@@ -47,8 +47,7 @@ padding: 10px;
   font-size: 16px;
   font-weight: 600;
 }
-
-p{
+.friends .items .info > p {
   margin: 0;
   padding: 0;
 }

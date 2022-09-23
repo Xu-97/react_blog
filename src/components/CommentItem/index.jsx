@@ -21,7 +21,7 @@ export default function MessageItem(props) {
     )
   })
   return (
-    <div>
+    <div className='message-ls'>
     <div className='message-item'>
       <div className='profile'>
       <Avatar
