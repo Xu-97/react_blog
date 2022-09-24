@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import "./index.less"
 import AppMenu from '../appMenu'
 import LeftBar from '../leftBar'
+import Bottom from '../bottom'
 const { Header, Content, Footer } = Layout
 const AppLayout = () => (
   <Layout className="layout">
@@ -20,7 +21,9 @@ const AppLayout = () => (
              <Outlet/>  
            </Col>
            <Col span={6}>
+           <Affix offsetTop={70}>
              <LeftBar/>
+             </Affix>
            </Col>
          </Row>      
         </Content>
@@ -30,7 +33,7 @@ const AppLayout = () => (
         textAlign: 'center',
       }}
     >
-    皖ICP备2021012350号-1
+      <Bottom/>
     </Footer>
   </Layout>
 );
