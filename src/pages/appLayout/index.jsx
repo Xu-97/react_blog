@@ -1,8 +1,9 @@
-import { Layout,Affix } from 'antd'
+import { Layout, Affix, Col, Row } from 'antd'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import "./index.less"
 import AppMenu from '../appMenu'
+import LeftBar from '../leftBar'
 const { Header, Content, Footer } = Layout
 const AppLayout = () => (
   <Layout className="layout">
@@ -12,11 +13,18 @@ const AppLayout = () => (
       <AppMenu/>
     </Header>
     </Affix>
-    <Content className="main-content">
-      <div className='container'>
-            <Outlet/>    
-      </div>
-    </Content>
+    <div className='container'>
+      <Content className="main-content">
+         <Row>
+           <Col span={18} className="flex-center">
+             <Outlet/>  
+           </Col>
+           <Col span={6}>
+             <LeftBar/>
+           </Col>
+         </Row>      
+        </Content>
+    </div>
     <Footer
       style={{
         textAlign: 'center',

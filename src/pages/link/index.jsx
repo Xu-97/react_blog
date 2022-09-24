@@ -20,7 +20,7 @@ export default function User() {
     window.open(url)
   } 
   return (
-    <>
+    <div className='links'>
     <div className='mine'>
       <h6>本站链接如下：</h6>
       <p>站点名称：劲夫随笔</p>
@@ -47,6 +47,6 @@ export default function User() {
         )
       }
     </div>
-    </>
+    </div>
   )
 }

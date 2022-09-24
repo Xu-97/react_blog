@@ -4,6 +4,7 @@
   margin-top: 20px;
   overflow-x: auto;
   background-color: #fff;
+  width: 90%;
 }
 
 .editor-content-view > .title{

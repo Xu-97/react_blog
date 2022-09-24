@@ -1,11 +1,9 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: '/development',
+  baseURL: '/api',
   timeout: 5 * 1000
 })
-
-console.log(process.env.NODE_ENV)
 
 // 请求拦截器, 请求之前需要做什么
 instance.interceptors.request.use(config => {

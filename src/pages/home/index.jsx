@@ -58,7 +58,7 @@ export default function Home() {
       {
         articles.map(item => 
           <Card bordered={false}
-          style={{ maxWidth: 400 }}
+          style={{ maxWidth: 300 }}
             onClick={() => {handleClick(item.id)}}
             cover={
               <img

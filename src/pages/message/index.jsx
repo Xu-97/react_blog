@@ -19,9 +19,10 @@ export default function Message() {
     setParams({pageNum,pageSize})
   } 
   return (
-    <div>
+    <div style={{width: '90%'}}>
       <div className='send-word'>
         <h3>如果对本站有兴趣或者idea, 请在下方发表留言</h3>
+        <p className='tips'>第一次使用React, 博客还有很多待完善得地方,感谢留言指正。</p>
       </div>
       <AddComment firstComment={true} />      
       <Comments  message={data} />
