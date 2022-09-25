@@ -13,3 +13,17 @@ export const getAboutMe = () =>
     url: '/my',
     method: 'GET'
   })
+
+  // 获取网站统计
+export const querySiteInfo = () =>
+request({
+  url:'/common/statistics',
+  method: 'GET'
+})
+
+// 获取所有标签
+export const getAllTags = () => 
+request({
+  url: '/label',
+  method: 'GET'
+})

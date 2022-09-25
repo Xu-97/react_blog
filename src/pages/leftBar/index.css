@@ -2,4 +2,54 @@
   background: #fff;
   margin-top: 15px;
   min-height: 600px;
+  padding: 20px 24px;
+}
+
+.is-center{
+  text-align: center;
+}
+
+.avatar-img {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 70px;
+}
+
+.author-info__name {
+  font-weight: 500;
+  font-size: 1.57em;
+  padding: 5px 0;
+}
+
+.site-data{
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+.article-nums, .label-nums, .message-nums{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.counts{
+  font-weight: 500;
+  font-size: 16px;
+}
+/* 标签 */
+.tags > .title{
+font-weight:600;
+padding: 10px;
+font-size: 15px;
+}
+.all-tags{
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.tag-tiem{
+  padding: 5px;
 }
