@@ -20,7 +20,6 @@ export default function LeftBar() {
     const result = await getAllTags()
     if(result.code === 200) {
       const {data} = result
-      console.log(data)
       setTags(data)
     }
   }
