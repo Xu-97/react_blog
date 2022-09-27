@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { parseTime } from '../../utils/help'
-import HighLight from '../../components/HighLight'
+// import HighLight from '../../components/HighLight'
+import Light from '../../components/Light'
 import { articleDetail } from '../../api/home'
 import "./index.css"
 
@@ -45,7 +46,7 @@ export default function Detail() {
         <span>标签： {detail.label_name}</span>
         <span> 更新时间：{parseTime(detail.update_time)}</span>
       </div>
-      <HighLight code={ htmlUnEscape(detail.content) } />
+      <Light code={ htmlUnEscape(detail.content) } />
     </div>
   )
 }
