@@ -48,6 +48,17 @@ export const getRandColor = () => {
   return color;
 }
 
+export function setRandColor(){
+  //使用字符串把十六进制数存起来
+  var str='0123456789abcde';
+  //用另一个字符串来存储#
+  var colorStr='#';
+  for(var i=1;i<=6;i++){
+    colorStr+=str[parseInt(Math.random()*str.length)];
+  }
+  return colorStr;
+}
+
 // 防抖函数封装
 // 防抖函数
 export function debounde(fn, wait, immediate) {

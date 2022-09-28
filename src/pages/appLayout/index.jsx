@@ -17,10 +17,10 @@ const AppLayout = () => (
     <div className='container'>
       <Content className="main-content">
          <Row>
-           <Col span={18} className="flex-center">
+           <Col span={19} className="flex-center">
              <Outlet/>  
            </Col>
-           <Col span={6}>
+           <Col span={5}>
            <Affix offsetTop={70}>
              <LeftBar/>
              </Affix>

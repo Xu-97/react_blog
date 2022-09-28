@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Tag } from 'antd'
 import {querySiteInfo, getAllTags} from '../../api/index'
-import { getRandColor } from '../../utils/help'
+import { setRandColor } from '../../utils/help'
 import "./index.css"
 
 export default function LeftBar() {
@@ -58,7 +58,7 @@ export default function LeftBar() {
         <div className='all-tags'>
          {
            tags.map( i => <div key={i.label_id} className='tag-tiem'>
-            <Tag style={{fontSize:'14px'}} color={getRandColor()}>{i.label_name}</Tag>
+            <Tag style={{fontSize:'16px', padding: '2px'}} color={setRandColor()}>{i.label_name}</Tag>
            </div>)
          }
         </div>

@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { Card, Tag, Pagination, Input } from 'antd'
-import { parseTime, getRandColor, debounde } from '../../utils/help'
+import { parseTime, setRandColor, debounde } from '../../utils/help'
 import { useNavigate} from "react-router-dom"
 import { getArticleData, getArticleByTitle } from '../../api/home'
 import "./index.css"
@@ -70,7 +70,7 @@ export default function Home() {
             key={item.id}
             >
             <Meta
-              title={<Tag color={ getRandColor()}>{item.label_name}</Tag>}
+              title={<Tag color={ setRandColor()}>{item.label_name}</Tag>}
               description={ parseTime(item.create_time)}
             />
           </Card>)
