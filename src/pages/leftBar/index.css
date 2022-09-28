@@ -53,3 +53,7 @@ font-size: 15px;
 .tag-tiem{
   padding: 5px;
 }
+.author-info__description{
+  font-size: 16px;
+  font-weight: 500;
+}
