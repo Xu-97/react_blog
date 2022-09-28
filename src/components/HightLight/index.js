@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import Prism from "prismjs";
-import "./index.css"
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark-dimmed.css';
 
 export default function HighLight({ code }) {
   useEffect(() => {
-    Prism.highlightAll()
+    hljs.highlightAll()
   }, [code]);
 
   return (
