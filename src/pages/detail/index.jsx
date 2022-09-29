@@ -20,22 +20,6 @@ export default function Detail() {
     _articleDetail()
   }, [id])
 
-
-  function htmlUnEscape(str) { //反转义
-    var unescapes = {
-        '&amp;': '&',
-        '&lt;': '<',
-        '&gt;': '>',
-        '&quot;': '"',
-        '&#39;': "'",
-        '<br/>': '\n'
-      },
-      reEscapedHtml = new RegExp(/&(?:amp|lt|gt|quot|#39);/g);
-    return (str && reEscapedHtml.test(str)) ? str.replace(reEscapedHtml, function(entity) {
-      return unescapes[entity];
-    }) : (str || '')
-  }
-
   return (
     <div className='editor-content-view'>
       <div className='title'>
@@ -45,7 +29,7 @@ export default function Detail() {
         <span>标签： {detail.label_name}</span>
         <span> 更新时间：{parseTime(detail.update_time)}</span>
       </div>
-      <HightLight code={ htmlUnEscape(detail.content) } />
+      <HightLight code={ detail.content } />
     </div>
   )
 }
