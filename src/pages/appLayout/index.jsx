@@ -14,20 +14,18 @@ const AppLayout = () => (
       <AppMenu/>
     </Header>
     </Affix>
-    <div className='container'>
       <Content className="main-content">
          <Row>
-           <Col span={19} className="flex-center">
+           <Col xs={24} sm={24} md={24} lg={18} xl={19} className="flex-center">
              <Outlet/>  
            </Col>
-           <Col span={5}>
+           <Col xs={0} sm={0} md={0} lg={4} xl={5}>
            <Affix offsetTop={70}>
              <LeftBar/>
              </Affix>
            </Col>
          </Row>      
         </Content>
-    </div>
     <Footer
       style={{
         textAlign: 'center',
