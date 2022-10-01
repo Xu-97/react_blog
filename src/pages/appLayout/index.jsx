@@ -5,6 +5,7 @@ import "./index.less"
 import AppMenu from '../appMenu'
 import LeftBar from '../leftBar'
 import Bottom from '../bottom'
+import DrawerMenu from '../drawerMenu'
 const { Header, Content, Footer } = Layout
 const AppLayout = () => (
   <Layout className="layout">
@@ -12,6 +13,7 @@ const AppLayout = () => (
     <Header>
       <div className="logo" />
       <AppMenu/>
+      <DrawerMenu/>
     </Header>
     </Affix>
       <Content className="main-content">

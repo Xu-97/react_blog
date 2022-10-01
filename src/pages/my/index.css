@@ -4,5 +4,10 @@
   padding: 20px;
   letter-spacing: 1.5px;
   border-radius: 5px;
-  width: 90%;
+  width: 100%;
+}
+@media (min-width: 768px){
+  .about-me{
+    width: 90%;
+  }
 }

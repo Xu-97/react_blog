@@ -4,7 +4,7 @@
   margin-top: 20px;
   overflow-x: auto;
   background-color: #fff;
-  width: 90%;
+  width: 100%;
 }
 
 .editor-content-view > .title{
@@ -65,4 +65,10 @@
 
 .editor-content-view input[type="checkbox"] {
   margin-right: 5px;
+}
+
+@media (min-width: 768px){
+  .editor-content-view{
+    width: 90%;
+  }
 }

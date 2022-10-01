@@ -2,6 +2,7 @@ import { Menu } from 'antd'
 import React,{ useState, useEffect} from 'react'
 import {menu} from './menu'
 import { useNavigate, useLocation } from "react-router-dom"
+import "./index.css"
 
 export default function AppMenu() {
   const navigate = useNavigate()

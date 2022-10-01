@@ -1,0 +1,30 @@
+@media (min-width: 768px){
+  .drawer-menu{
+    display: none;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 766px){
+  .drawer-menu{
+    display: block;
+  }
+}
+.phone-header{
+  position: relative;
+}
+.phone-header .article-title{
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+} 
+.drawer-menu .ant-btn{
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+.menu-item{
+  padding: 5px 10px 5px 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
