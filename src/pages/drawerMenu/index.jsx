@@ -22,12 +22,12 @@ export default function DrawerMenu() {
     <div className='drawer-menu'>
 
       <div className='phone-header'>
-        <Button type="primary" onClick={showDrawer}>
+        <Button shape="round" type="primary" onClick={showDrawer}>
           Menu
         </Button>
         <div className='article-title'><span>劲夫随笔</span></div>
       </div>
-      <Drawer  width={300} title="菜单" placement="left" onClose={onClose} open={open}>
+      <Drawer  width={300} title="Hello SomeOne" placement="left" onClose={onClose} open={open}>
         {
           menu.map(i => <div onClick={() => handleClick(i.path)} className='menu-item' key={i.key}>{i.label}</div>)
         }

@@ -25,7 +25,7 @@ export default function MessageItem(props) {
     <div className='message-item'>
       <div className='profile'>
       <Avatar
-        shape="circle" size={64}
+        shape="circle" size={45}
         src={item.qq}
         />
         <div className='username'>

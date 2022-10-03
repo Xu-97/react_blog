@@ -1,10 +1,11 @@
 import request  from '../utils/service'
 
 // 网站日志
-export const getWebLog = () => 
+export const getWebLog = (data) => 
   request({
     url: '/weblog',
-    method: 'GET'
+    method: 'GET',
+    params: data
   })
 
 //关于我
