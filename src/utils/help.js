@@ -3,13 +3,12 @@ export const parseTime =  function(time, pattern) {
   if (arguments.length === 0 || !time) {
     return null
   }
-  const format = pattern || '{y}-{m}-{d} {h}:{i}:{s}'
+  const format = pattern || '{yy}/{m}/{d} {h}:{i}:{s}'
   let date
   if (typeof time === 'object') {
     date = time
   } else {
     if ((typeof time === 'string') && (/^[0-9]+$/.test(time))) {
-      time = parseInt(time)
     } else if (typeof time === 'string') {
       time = time.replace(new RegExp(/-/gm), "/").replace('T', ' ').replace(new RegExp(/\.[\d]{3}/gm), '');
     }
@@ -39,15 +38,8 @@ export const parseTime =  function(time, pattern) {
   return time_str
 }
 
-// 随机生成16进制颜色
-export const getRandColor = () => {
-  const r = Math.floor(Math.random()*255);
-  const g = Math.floor(Math.random()*255);
-  const b = Math.floor(Math.random()*255);
-  const color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
-  return color;
-}
 
+// 随机生成16进制颜色
 export function setRandColor(){
   //使用字符串把十六进制数存起来
   var str='0123456789abcde';
