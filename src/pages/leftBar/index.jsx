@@ -31,7 +31,7 @@ export default function LeftBar() {
     <div className='left-bar'>
       <div className='is-center'>
         <div className='avatar-img'>
-          <img style={{width:'100%'}} src="http://cdn.xrblogs.cn/avatar.jpg" alt="" />
+          <img style={{width:'100%'}} src="https://cdn.xrblogs.cn/avatar.jpg" alt="" />
         </div>
         <div className='author-info__name'>劲夫</div>
         <div className='author-info__description'>Never Give Up</div>

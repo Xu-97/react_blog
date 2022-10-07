@@ -34,7 +34,7 @@ export default function WebLog() {
        renderItem={(item) => (
        <List.Item>
         <List.Item.Meta
-          avatar={<Avatar src="http://cdn.xrblogs.cn/avatar.jpg" />}
+          avatar={<Avatar src="https://cdn.xrblogs.cn/avatar.jpg" />}
           title={<div><span className='head-name'>博主</span><span className='create-time'>{parseTime(item.create_time)}</span></div>}
           description={item.log}
         />

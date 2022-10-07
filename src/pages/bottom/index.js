@@ -6,7 +6,7 @@ export default function Footer() {
   }
   return (
     <div style={{fontSize:'12px',color:'#AAA'} }onClick={handleClick}>
-      <p><img src='http://cdn.heblogs.cn/beian.png' alt='' />皖ICP备2021012350号-1</p>
+      <p><img src='https://cdn.heblogs.cn/beian.png' alt='' />皖ICP备2021012350号-1</p>
     </div>
   )
 }
