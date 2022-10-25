@@ -29,7 +29,8 @@ export default function MessageItem(props) {
         src={item.qq}
         />
         <div className='username'>
-          {item.nickname}
+          {
+          item.qq==='http://q.qlogo.cn/headimg_dl?dst_uin=1194150512@qq.com&spec=100' ? '原来是小何鸭': item.nickname}
         </div>
       </div>
       <div className='comment-detail'>
