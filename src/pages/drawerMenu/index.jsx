@@ -8,6 +8,7 @@ export default function DrawerMenu() {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const showDrawer = () => {
+    console.log(open);
     setOpen(true)
   }
 
