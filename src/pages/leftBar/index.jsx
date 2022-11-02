@@ -58,7 +58,7 @@ export default function LeftBar() {
         <div className='all-tags'>
          {
            tags.map( i => <div key={i.label_id} className='tag-tiem'>
-            <Tag style={{fontSize:'16px', padding: '2px'}} color={setRandColor()}>{i.label_name}</Tag>
+            <Tag style={{fontSize:'16px', padding: '8px'}} color={setRandColor()}>{i.label_name}</Tag>
            </div>)
          }
         </div>
