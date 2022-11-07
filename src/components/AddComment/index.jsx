@@ -16,7 +16,6 @@ export default function AddComment(props) {
     }else {
       data = Object.assign(values,{parentId:0})
     }
-    console.log(data);
     const result = await addMessage(data)
     if (result.code === 200) {
       form.resetFields()
