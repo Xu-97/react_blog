@@ -14,11 +14,11 @@ export default function Home() {
   const navigate = useNavigate()
   
   useEffect(() => {
-    _getArticleData()
-  },[])
+    _getArticleData(params)
+  },[params])
   // 接口拿数据
-  async function _getArticleData() {
-    const result = await getArticleData({pageNum:1,pageSize:10})
+  async function _getArticleData(params) {
+    const result = await getArticleData(params)
     if (result.code === 200) {
       const {data, total} = result
       setArticles(data)
@@ -27,6 +27,7 @@ export default function Home() {
   }
   // 分页切换
   function handlePageChange (pageNum, pageSize) {
+    console.log(pageNum, pageSize)
     setParams({pageNum,pageSize})
   } 
   //点击进详情

@@ -2,22 +2,23 @@ export const menu = [
   {
     label: '首页',
     index: 'true',   
-    key: 'home',
+    key: '/home',
+    path: '/home'
   },
   {
     label: '日志',
     path: '/weblog',
-    key: 'weblog'
+    key: '/weblog'
   },
   {
     label: '友链',
     path: "/link",    
-    key: 'link'
+    key: '/link'
   },
   {
     label: '留言',
     path: "/message",
-    key: 'message'
+    key: '/message'
   },
   {
     label: '更多',
@@ -25,12 +26,12 @@ export const menu = [
     children:[
       {
         label: '我的',
-        key: 'my',
+        key: '/my',
         path:'/my' 
       },
       {
         label: '资源分享',
-        key: 'share',
+        key: '/share',
         path:'/share'        
       },
     ]

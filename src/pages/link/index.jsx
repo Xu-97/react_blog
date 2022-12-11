@@ -25,7 +25,7 @@ export default function User() {
       <h6>本站链接如下：</h6>
       <p>站点名称：劲夫随笔</p>
       <p>描述：Never Give Up</p>
-      <p>网链：http://xrblogs.cn/</p>
+      <p>网链：https://www.xrblogs.cn/</p>
       <p>头像：https://cdn.xrblogs.cn/avatar.jpg</p>
     </div>
     <div className='friends'>

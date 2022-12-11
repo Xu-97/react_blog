@@ -3,6 +3,7 @@ import CommentItem from '../CommentItem'
 
 export default function Comments(props) {
   const { message } = props
+  console.log(message)
   return (
     <div>
       {
