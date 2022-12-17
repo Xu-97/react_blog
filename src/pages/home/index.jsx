@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Tag, Pagination, Input } from 'antd'
-import { parseTime, setRandColor, debounde } from '../../utils/help'
+import { parseTime, setRandColor, debounde } from '@/utils/help'
 import { useNavigate } from "react-router-dom"
-import { getArticleData, getArticleByTitle, loadArticleSById } from '../../api/home'
+import { getArticleData, getArticleByTitle, loadArticleSById } from '@/api/home'
 import { useSelector, useDispatch } from 'react-redux/es/exports'
 import { resetLabelId } from '../../store/modules/article'
 import "./index.css"
@@ -83,6 +83,7 @@ export default function Home() {
                 <img
                   alt="找不到图片了"
                   src={item.cover_img}
+                  style={{padding: '0 8px'}}
                 />
               }
               title={item.title}
