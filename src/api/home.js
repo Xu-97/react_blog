@@ -18,3 +18,9 @@ export const getArticleByTitle = (title) => request({
   url: `/article/queryTitle?title=${title}`,
   method: 'GET'
 })
+
+// 通过labelId查询
+export const loadArticleSById = (labelId) => request({
+  url: `/article/getById?labelId=${labelId}`,
+  method: 'get'
+})

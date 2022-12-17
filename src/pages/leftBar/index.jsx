@@ -2,9 +2,14 @@ import React, {useState, useEffect} from 'react'
 import { Tag } from 'antd'
 import {querySiteInfo, getAllTags} from '../../api/index'
 import { setRandColor } from '../../utils/help'
+import { useDispatch } from 'react-redux/es/exports'
+import { handleLabelId } from '../../store/modules/article'
+import { useNavigate } from "react-router-dom"
 import "./index.css"
 
 export default function LeftBar() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [nums, setNums] = useState({})
   const [tags, setTags] = useState([])
 
@@ -26,6 +31,11 @@ export default function LeftBar() {
   _getSiteInfo()
   _getAllTags()
   },[])
+
+  const handleClick = (labelId) =>{
+    dispatch(handleLabelId(labelId))
+    navigate('/home', { replace: true, })
+  }
 
   return (
     <div className='left-bar'>
@@ -58,7 +68,7 @@ export default function LeftBar() {
         <div className='all-tags'>
          {
            tags.map( i => <div key={i.label_id} className='tag-tiem'>
-            <Tag style={{fontSize:'16px', padding: '8px'}} color={setRandColor()}>{i.label_name}</Tag>
+            <Tag onClick={() => handleClick(i.label_id)} style={{fontSize:'14px', padding: '6px', cursor:'pointer'}} color={setRandColor()}>{i.label_name}</Tag>
            </div>)
          }
         </div>
