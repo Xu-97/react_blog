@@ -47,7 +47,9 @@
 .editor-content-view pre>code {
   display: block;
   padding: 10px;
+  font-size: 16px;
 }
+
 
 .editor-content-view table {
   border-collapse: collapse;
@@ -76,3 +78,11 @@
     width: 90%;
   }
 }
+
+@media screen and (min-width: 375px) and (max-width: 766px){
+  .editor-content-view pre>code{
+    font-size: 14px;
+  }
+}
+
+
