@@ -8,7 +8,7 @@ module.exports = {
     },
     plugins: [
       new TerserPlugin({
-        sourceMap: true, // Must be set to true if using source-maps in production
+        // sourceMap: process.env.NODE_ENV === "production" ? false: true, // Must be set to true if using source-maps in production
         terserOptions: {
           ecma: undefined,
           warnings: false,
