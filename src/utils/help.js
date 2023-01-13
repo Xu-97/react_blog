@@ -39,7 +39,7 @@
 // }
 import moment from "moment";
 
-export const parseTime = function(time,pattern='YYYY-MM-DD hh:mm:ss'){
+export const parseTime = function(time,pattern='YYYY-MM-DD HH:mm:ss'){
   return moment(time).format(pattern)
 }
 
