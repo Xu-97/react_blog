@@ -1,8 +1,7 @@
 import { lazy, Suspense } from "react"; // 引入懒加载
 import { Navigate } from "react-router-dom";
-import { Spin } from "antd";
 import AppLayout from "../pages/appLayout";
-import Home from '../pages/home'
+import Home from "../pages/home";
 const Link = lazy(() => import("../pages/link"));
 const My = lazy(() => import("../pages/my"));
 const Share = lazy(() => import("../pages/share"));
@@ -11,7 +10,13 @@ const Message = lazy(() => import("../pages/message"));
 const Detail = lazy(() => import("../pages/detail"));
 const Weblog = lazy(() => import("../pages/weblog"));
 const lazyLoad = (children) => {
-  return <Suspense fallback={<Spin />}>{children}</Suspense>;
+  return (
+    <Suspense
+      fallback={<></>}
+    >
+      {children}
+    </Suspense>
+  );
 };
 
 const routers = [
@@ -24,7 +29,7 @@ const routers = [
     element: <AppLayout />,
     children: [
       {
-        path:'/home',
+        path: "/home",
         label: "首页",
         element: <Home />,
         key: "home",
