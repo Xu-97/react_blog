@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Tag } from 'antd'
-import {querySiteInfo, getAllTags} from '../../api/index'
+import {querySiteInfo, getAllTags, getClientInfo} from '../../api/index'
 import { setRandColor } from '../../utils/help'
 import { useDispatch } from 'react-redux/es/exports'
 import { handleLabelId } from '../../store/modules/article'
@@ -28,8 +28,14 @@ export default function LeftBar() {
       setTags(data)
     }
   }
+
+  const _getClientInfo = async () => {
+    const result = await getClientInfo()
+    return result
+  }
   _getSiteInfo()
   _getAllTags()
+  _getClientInfo()
   },[])
 
   const handleClick = (labelId) =>{

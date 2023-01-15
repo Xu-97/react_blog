@@ -28,3 +28,12 @@ request({
   url: '/label',
   method: 'GET'
 })
+
+
+// 获取客户端信息
+
+export const getClientInfo = () => 
+request({
+  url: '/common/ip',
+  method: 'get'
+})
